@@ -1,9 +1,9 @@
 import React from 'react'
-import Lists from './Component/Lists'
+import Cards from './Component/Cards'
 const App = () => {
   return (
-    <div>
-      <Lists></Lists>
+    <div className='bg-dark min-vh-100 min-vw-100 p-3'>
+      <Cards></Cards>
     </div>
   )
 }
