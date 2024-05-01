@@ -53,7 +53,7 @@ const Cards = () => {
 
     // Validate age (must be 2 digits)
     if (age < 18 || age >= 100) {
-      setModalMessage("Age must be a greator than 18 yr.");
+      setModalMessage("Age must be a greator than 18 yr and less than 100 yr.");
       setShowModal(true);
       return;
     }
