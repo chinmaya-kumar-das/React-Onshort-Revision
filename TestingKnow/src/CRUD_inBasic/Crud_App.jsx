@@ -66,14 +66,32 @@ const Crud_App = () => {
     }
 
   }
+  function sortHandler(e) {
+    let param = e.target.value;
+    let sortedData=[...celebrity];
   
+    if (param === 'age') {
+      sortedData.sort((a, b) => a.age - b.age);
+    } else if (param === 'name') {
+      sortedData.sort((a, b) => a.name.localeCompare(b.name));
+    }
+  
+    addCelebrity(sortedData);
+  }
 
   return (
     <div className='flex flex-col overflow-hidden justify-between items-center bg-[#edede9]'>
       <nav className='bg-[#e85d04] w-full py-2 flex gap-10 text-3xl font-bold justify-around'>
         <NavLink to="/">Home</NavLink>
         <div><input type='search' name='search' value={keyWord} onChange={keywordSearch}  className='px-2 py-1 rounded-md text-2xl' placeholder='Search...'></input></div>
-        <div></div>
+        <div className='flex gap-1'>
+            <span>Sort by : </span>
+            <select htmlFor='sort' onChange={sortHandler}>
+              <option value='age' id='sort' name='age'>Age</option>
+              <option value='name' id='sort' name='name'>Name</option>
+            </select>
+            
+        </div>
         <NavLink to="/form">New Celebrity</NavLink>
       </nav>
       <Routes>
