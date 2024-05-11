@@ -1,18 +1,14 @@
-let arr=[1,2,3,4,5,6,7];
-
-let newArr=[];
-let filteredArr=arr.map((val)=>{
-    if(val%2==0){
-        newArr.push(val)
-    }
-})
-
-console.log("new filtered array is "+ newArr);
+function print(){
+    console.log("1")
+}
 
 
-
-let f2=arr.filter((val)=>{
-    return   val%2==0;
-})
-
-console.log(f2)
+function print2(){
+    console.log("2")
+}
+function print3(){
+    console.log("3")
+}
+setTimeout(print3,5000)
+print()
+print2()
